@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da9b7a1dc1dd923105198c572cc7df8d",
+    "content-hash": "dbb747ab485d34d05e98564d56532750",
     "packages": [
         {
             "name": "brick/math",
@@ -5674,6 +5674,62 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "yakoffka/airac-calc",
+            "version": "0.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yakoffka/AIRAC-calc.git",
+                "reference": "a95d7bce86f0a5311715d1623948669bead4a0fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yakoffka/AIRAC-calc/zipball/a95d7bce86f0a5311715d1623948669bead4a0fc",
+                "reference": "a95d7bce86f0a5311715d1623948669bead4a0fc",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^3.4.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^8.1.0",
+                "orchestra/testbench": "^v9.1.0",
+                "phpunit/phpunit": "^11.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Yakoffka\\AiracCalc\\AiracCalcServiceProvider"
+                    ],
+                    "aliases": {
+                        "AiracCalc": "Yakoffka\\AiracCalc\\AiracCalcServiceFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yakoffka\\AiracCalc\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yakoffKa",
+                    "email": "yagithub@mail.ru"
+                }
+            ],
+            "description": "Laravel package for calculate AIRAC cycles",
+            "support": {
+                "issues": "https://github.com/yakoffka/AIRAC-calc/issues",
+                "source": "https://github.com/yakoffka/AIRAC-calc/tree/0.2.5"
+            },
+            "time": "2024-05-28T11:57:23+00:00"
         }
     ],
     "packages-dev": [

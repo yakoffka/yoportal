@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -102,7 +102,7 @@
                                 </div>
                             </a>
 
-                            <a
+                            {{--<a
                                 href="https://laracasts.com"
                                 class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
                             >
@@ -115,6 +115,65 @@
 
                                     <p class="mt-4 text-sm/relaxed">
                                         Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                    </p>
+                                </div>
+
+                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                            </a>--}}
+
+                            <a
+                                href="https://packagist.org/packages/yakoffka/airac-calc"
+                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
+                            >
+                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
+                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
+                                </div>
+
+                                <div class="pt-3 sm:pt-5">
+                                    <h2 class="text-xl font-semibold text-black dark:text-white">Airac Calc</h2>
+                                    <h2 class="text-xl font-semibold text-black dark:text-white">
+                                        Today is the
+                                        @php
+                                            echo AiracCalc::getCycleDay() . ' day of the '. AiracCalc::getCurrentCycle() . ' cycle';
+                                        @endphp
+                                    </h2>
+
+                                    <p class="mt-4 text-sm/relaxed">
+                                                Cycles: prev
+                                                    @php
+                                                        echo AiracCalc::getPrevCycle();
+                                                    @endphp
+                                            <span style="color:rgb(229 231 235)">
+                                                current
+                                                    @php
+                                                        echo AiracCalc::getCurrentCycle();
+                                                    @endphp
+                                            </span>
+                                                next
+                                                @php
+                                                    echo AiracCalc::getNextCycle();
+                                                @endphp
+                                        <br>
+                                                Days: prev
+                                                    @php
+                                                        echo AiracCalc::getCycleDay(now()->subDay()->format('Y-m-d'));
+                                                    @endphp
+                                            <span style="color:rgb(229 231 235)">
+                                                current
+                                                    @php
+                                                        echo AiracCalc::getCycleDay();
+                                                    @endphp
+                                            </span>
+                                                next
+                                                @php
+                                                    echo AiracCalc::getCycleDay(now()->addDay()->format('Y-m-d'));
+                                                @endphp
+                                    </p>
+                                   <p class="mt-4 text-sm/relaxed">
+                                                    @php
+                                                        echo 28 - AiracCalc::getCycleDay() + 1;
+                                                    @endphp
+                                             days left until next cycle
                                     </p>
                                 </div>
 
