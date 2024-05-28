@@ -20,3 +20,7 @@ yarn-error.log
 /.vscode
 /temp
 temp/note.txt
+
+/public/beetest
+/public/translate
+/public_html
