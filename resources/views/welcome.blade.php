@@ -131,49 +131,44 @@
 
                                 <div class="pt-3 sm:pt-5">
                                     <h2 class="text-xl font-semibold text-black dark:text-white">Airac Calc</h2>
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">
-                                        Today is the
+                                    <h3 class="text-x font-semibold text-black dark:text-white">
+                                        Today,
+                                        @php
+                                            echo now()->format('Y M d')
+                                        @endphp, is the
                                         @php
                                             echo AiracCalc::getCycleDay() . ' day of the '. AiracCalc::getCurrentCycle() . ' cycle';
                                         @endphp
-                                    </h2>
+                                    </h3>
 
                                     <p class="mt-4 text-sm/relaxed">
-                                                Cycles: prev
+                                                Prev cycle:
                                                     @php
                                                         echo AiracCalc::getPrevCycle();
-                                                    @endphp
-                                            <span style="color:rgb(229 231 235)">
-                                                current
-                                                    @php
-                                                        echo AiracCalc::getCurrentCycle();
-                                                    @endphp
-                                            </span>
-                                                next
+                                                    @endphp;
+                                                next cycle:
                                                 @php
                                                     echo AiracCalc::getNextCycle();
-                                                @endphp
+                                                @endphp.
                                         <br>
-                                                Days: prev
+                                                Prev day:
                                                     @php
                                                         echo AiracCalc::getCycleDay(now()->subDay()->format('Y-m-d'));
-                                                    @endphp
-                                            <span style="color:rgb(229 231 235)">
-                                                current
-                                                    @php
-                                                        echo AiracCalc::getCycleDay();
-                                                    @endphp
-                                            </span>
-                                                next
+                                                    @endphp;
+                                                next day:
                                                 @php
                                                     echo AiracCalc::getCycleDay(now()->addDay()->format('Y-m-d'));
-                                                @endphp
+                                                @endphp.
                                     </p>
-                                   <p class="mt-4 text-sm/relaxed">
+                                    <p class="mt-4 text-sm/relaxed">
                                                     @php
                                                         echo 28 - AiracCalc::getCycleDay() + 1;
                                                     @endphp
-                                             days left until next cycle
+                                             days left until
+                                                    @php
+                                                        echo AiracCalc::getNextCycle();
+                                                    @endphp
+                                            cycle
                                     </p>
                                 </div>
 
