@@ -11,7 +11,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        throw new \PHPUnit\Event\RuntimeException('Это заготовка! миграция еще не продумана!');
+        // throw new \PHPUnit\Event\RuntimeException('Это заготовка! миграция еще не продумана!');
 
         Schema::create('tm_tasks', static function (Blueprint $table) {
             $table->id();

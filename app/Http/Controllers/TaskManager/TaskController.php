@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\TaskManager\Task;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Blade;
 
 /**
  * Обработка запросов, связанных с изменением задач раздела TaskManager
@@ -18,10 +21,25 @@ class TaskController extends Controller
      */
     public function index()
     {
+        /** @var User $user */
         $user = auth()->user();
 
-        return "hello, $user->name. You have " . $user->createdTasks()->count() . '. created tasks and '
-            . $user->assignedTasks()->count() . ' assigned tasks.';
+        // return "hello, $user->name. You have " . $user->createdTasks()->count() . '. created tasks and '
+        //     . $user->assignedTasks()->count() . ' assigned tasks.';
+
+        // return Blade::render(
+        //     'Hello, {{ $name }}. You have {{ $created }} created tasks and {{ $assigned }} assigned tasks.', [
+        //     'name' => "$user->id|$user->name",
+        //     'created' => $user->createdTasks()->count(),
+        //     'assigned' => $user->assignedTasks()->count(),
+        // ]);
+
+        /** @var Collection $createdTasks */
+        $createdTasks = $user->createdTasks;
+        /** @var Collection $assignedTasks */
+        $assignedTasks = $user->assignedTasks;
+
+        return view('tm.tasks.index', compact('user','createdTasks', 'assignedTasks'));
     }
 
     /**

@@ -1,11 +1,15 @@
 <?php
+declare(strict_types=1);
 
 namespace Database\Factories\TaskManager;
 
+use App\Enums\TaskManager\TaskStatusEnum;
+use App\Models\TaskManager\Task;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\TaskManager\Task>
+ * @extends Factory<Task>
  */
 class TaskFactory extends Factory
 {
@@ -17,7 +21,12 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'from' => User::factory(),
+            'to' => User::factory(),
+            'status' => TaskStatusEnum::Draft,
+            'name' => $this->faker->sentence(),
+            'description' => $this->faker->sentences(),
+            'due_date' => now()->addWeek(),
         ];
     }
 }
