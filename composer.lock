@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01f9aeff4da2b29ae72c5f1cb8827a72",
+    "content-hash": "36f92f034c9155d9d5c51d2f21822947",
     "packages": [
         {
             "name": "brick/math",
@@ -5732,6 +5732,59 @@
                 "source": "https://github.com/yakoffka/AIRAC-calc/tree/0.2.5"
             },
             "time": "2024-05-28T11:57:23+00:00"
+        },
+        {
+            "name": "yakoffka/laravel-universal-coordinate-parser",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yakoffka/laravel-universal-coordinate-parser.git",
+                "reference": "6d5b43c7a2e456a3314e97c177efb2e0550eba59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yakoffka/laravel-universal-coordinate-parser/zipball/6d5b43c7a2e456a3314e97c177efb2e0550eba59",
+                "reference": "6d5b43c7a2e456a3314e97c177efb2e0550eba59",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Yakoffka\\UniversalCoordinateParser\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "UniversalCoordinateParser": "Yakoffka\\UniversalCoordinateParser\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yakoffka\\UniversalCoordinateParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yakoffka",
+                    "email": "yagithub@mail.ru"
+                }
+            ],
+            "description": "laravel universal coordinate parser",
+            "support": {
+                "issues": "https://github.com/yakoffka/laravel-universal-coordinate-parser/issues",
+                "source": "https://github.com/yakoffka/laravel-universal-coordinate-parser/tree/0.0.1"
+            },
+            "time": "2024-10-14T21:14:38+00:00"
         }
     ],
     "packages-dev": [

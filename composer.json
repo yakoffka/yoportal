@@ -8,7 +8,8 @@
         "php": "^8.2",
         "laravel/framework": "^11.19",
         "laravel/tinker": "^2.9",
-        "yakoffka/airac-calc": "^0.2.5"
+        "yakoffka/airac-calc": "^0.2.5",
+        "yakoffka/laravel-universal-coordinate-parser": "^0.0.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.1",
