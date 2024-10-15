@@ -158,7 +158,8 @@
                                 <pre class="mt-0 text-sm/relaxed">$point = UniversalCoordinateParser::getPointDto(<br>    '{{ $subject }}'<br>);<br>$print = print_r($point, true);</pre>
                                 <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
                                     @php
-                                        $point = UniversalCoordinateParser::getPointDto($subject);
+                                        $point = Yakoffka\UniversalCoordinateParser\Facade::getPointDto($subject);
+                                        //$point = UniversalCoordinateParser::getPointDto($subject);
                                         $print = print_r($point, true);
                                         echo "<pre>$print</pre>"
                                     @endphp
